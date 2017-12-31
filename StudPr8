@@ -1,0 +1,33 @@
+/*THIS CODE IS NOT MY PROPERTY. IT HAS BENN TACKEN FROM THE WEB*/
+
+package com.github.pedrovgs.problem74;
+
+import com.github.pedrovgs.sortingalgorithm.SortingAlgorithm;
+
+/**
+ * Given an array full of integers implement a bubble sort algorithm to sort the content inside the
+ * array.
+ *
+ * @author Pedro Vicente Gómez Sánchez.
+ */
+public class BubbleSort extends SortingAlgorithm {
+
+  public void sort(int[] numbers) {
+    validateInput(numbers);
+
+    int length = numbers.length;
+    boolean swap = true;
+    while (swap) {
+      swap = false;
+      for (int i = 0; i < length - 1; i++) {
+        for (int j = 0; j < length - i - 1; j++) {
+          if (numbers[j] > numbers[j + 1]) {
+            swap(numbers, j, j + 1);
+            swap = true;
+          }
+        }
+      }
+    }
+  }
+
+}
